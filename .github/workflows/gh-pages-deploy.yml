@@ -57,7 +57,7 @@ jobs:
         # this is necessary for github pages where the site is deployed to username.github.io/repo_name and all files must be requested
         # relatively as favicon.ico. if we skip public-url option, the href paths will instead request username.github.io/favicon.ico which
         # will obviously return error 404 not found.
-        run: ./trunk build --release --public-url "${GITHUB_REPOSITORY#*/}"
+        run: ./trunk build --release --public-url demo-rust-webdev
 
 
       # Deploy to gh-pages branch
@@ -70,17 +70,17 @@ jobs:
       # Deploy with Github Static Pages
 
       - name: Setup Pages
-        uses: actions/configure-pages@v4
+        uses: actions/configure-pages@v5
         with:
           enablement: true
           # token:
 
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v2
+        uses: actions/upload-pages-artifact@v3
         with:
           # Upload dist dir
           path: './dist'
 
       - name: Deploy to GitHub Pages 🚀
         id: deployment
-        uses: actions/deploy-pages@v3
+        uses: actions/deploy-pages@v4
