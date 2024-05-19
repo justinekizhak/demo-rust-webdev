@@ -18,5 +18,6 @@ fn App() -> impl IntoView {
             "Click me: "
             {count}
         </button>
+        <div class="text-red-500 text-3xl font-bold"> Hello world! </div>
     }
 }
